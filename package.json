@@ -9,13 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-slick": "^0.23.10",
     "@types/styletron-engine-atomic": "^1.1.1",
+    "@types/swiper": "^6.0.0",
     "baseui": "^12.1.2",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-slick": "^0.29.0",
     "styletron-engine-atomic": "^1.5.0",
-    "styletron-react": "^6.1.0"
+    "styletron-react": "^6.1.0",
+    "swiper": "^8.3.2"
   },
   "devDependencies": {
     "@types/node": "18.7.14",
