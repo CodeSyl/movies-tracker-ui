@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/styletron-engine-atomic": "^1.1.1",
     "baseui": "^12.1.2",
     "next": "12.2.5",
     "react": "18.2.0",
