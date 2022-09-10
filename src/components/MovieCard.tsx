@@ -4,7 +4,7 @@ import { Card, StyledBody } from "baseui/card";
 export default function MovieCard() {
   return (
     <Card
-      overrides={{ Root: { style: { width: "220px" } } }}
+      overrides={{ Root: { style: { width: "100%" } } }}
       headerImage={"https://source.unsplash.com/user/erondu/700x400"}
     >
       <StyledBody>
