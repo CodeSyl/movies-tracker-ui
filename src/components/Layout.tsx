@@ -15,7 +15,7 @@ export default function Layout({ children }: LayoutProps) {
       <div
         className={css({
           color: "white",
-          backgroundColor: "rgba(0,0,0, 0.5)",
+          backgroundColor: "rgba(0,0,0, 0.7)",
         })}
       >
         <Grid>

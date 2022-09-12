@@ -13,7 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-const PosterSwiper = ({
+const HeaderSwiper = ({
   movies,
   setBackGroundImage,
 }: {
@@ -24,6 +24,8 @@ const PosterSwiper = ({
 
   const spaceHeader = css({ marginBottom: theme.sizing.scale700 });
   const space = css({ marginLeft: theme.sizing.scale300 });
+
+  if (!movies.length) return <h1>axait</h1>;
 
   return (
     <Swiper
@@ -47,7 +49,7 @@ const PosterSwiper = ({
             style={{
               borderRadius: "1rem",
               backgroundSize: "cover",
-              backgroundImage: `url(${IMAGE_URL}/${movie.backdrop_path})`,
+              backgroundImage: `url(${IMAGE_URL}/${movie?.backdrop_path})`,
             }}
           >
             <div
@@ -72,8 +74,9 @@ const PosterSwiper = ({
               <Button
                 size={SIZE.compact}
                 style={{
+                  color: "white",
+                  boxShadow: "0px 0px 0px 2px white inset",
                   backgroundColor: "transparent",
-                  border: "solid 3px white",
                 }}
               >
                 En savoir plus
@@ -86,4 +89,4 @@ const PosterSwiper = ({
   );
 };
 
-export default PosterSwiper;
+export default HeaderSwiper;

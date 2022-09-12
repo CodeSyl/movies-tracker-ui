@@ -29,44 +29,42 @@ const options = {
 export default function NavBar() {
   return (
     <Block className="px-8">
-
-    <HeaderNavigation
-      overrides={{
-        Root: {
-          style: {
-            background: "transparent",
-            border: "none",
-            marginBottom: "3em",
+      <HeaderNavigation
+        overrides={{
+          Root: {
+            style: {
+              background: "transparent",
+              border: "none",
+              marginBottom: "3em",
+            },
           },
-        },
-      }}
-    >
-      <NavigationList $align={ALIGN.left}>
-        <NavigationItem
-          style={{
-            alignItems: "self-start",
-            justifyContent: "center",
-            paddingLeft: "0",
-          }}
-        >
-          <HeadingMedium>MOVIENIGHT</HeadingMedium>
-        </NavigationItem>
-      </NavigationList>
-      <NavigationList $align={ALIGN.center} />
-      <NavigationList $align={ALIGN.right}>
-        <NavigationItem style={{ width: "400px", paddingRight: "10px" }}>
-          <Search
-            {...options}
-            type={TYPE.search}
-            getOptionLabel={(props) =>
-              props.option && props.option.id ? props.option.id : null
-            }
-            onChange={() => {}}
-          />
-        </NavigationItem>
-      </NavigationList>
-    </HeaderNavigation>
-
+        }}
+      >
+        <NavigationList $align={ALIGN.left}>
+          <NavigationItem
+            style={{
+              alignItems: "self-start",
+              justifyContent: "center",
+              paddingLeft: "0",
+            }}
+          >
+            <HeadingMedium>MOVIENIGHT</HeadingMedium>
+          </NavigationItem>
+        </NavigationList>
+        <NavigationList $align={ALIGN.center} />
+        <NavigationList $align={ALIGN.right}>
+          <NavigationItem style={{ width: "400px", paddingRight: "10px" }}>
+            <Search
+              {...options}
+              type={TYPE.search}
+              getOptionLabel={(props) =>
+                props.option && props.option.id ? props.option.id : null
+              }
+              onChange={() => {}}
+            />
+          </NavigationItem>
+        </NavigationList>
+      </HeaderNavigation>
     </Block>
   );
 }
