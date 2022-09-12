@@ -1,31 +1,35 @@
 import { GetServerSideProps } from "next";
-import SwiperCard from "../components/SwiperCard";
-import { API_KEY, BASE_MOVIE, TRENDING_MOVIES_URL } from "../const";
-import { dataMocked } from "../movies_mock";
+import PosterSwiper from "../components/PosterSiwper";
+import { BackGroundBlurImage } from "../components/BackGroundBlurImage";
+
 import { IMovieDetail } from "../types";
+import { TRENDING_MOVIES_URL } from "../const";
+import { useState } from "react";
+import { dataMocked } from "../movies_mock";
 
 const Home = ({ movies }: { movies: IMovieDetail[] }) => {
+  const [bgImage, setBgImage] = useState<string>(movies[0].backdrop_path);
+
+  const setBackGroundImage = (index: number) => {
+    setBgImage(movies[index].backdrop_path);
+  };
+
   return (
-    <>
-      <div
-        className="bg-scroll w-4/5 h-1.5 p-5"
-        style={{
-          backgroundImage:
-            "url(https://source.unsplash.com/user/erondu/700x400)",
-        }}
-      >
-        <h1>dsad</h1>
-      </div>
-      <SwiperCard movies={movies} />
-    </>
+    <div>
+      <BackGroundBlurImage image={bgImage} />
+      <PosterSwiper
+        movies={movies}
+        setBackGroundImage={setBackGroundImage}
+      />
+    </div>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch(TRENDING_MOVIES_URL);
-  const data = await res.json();
+  // const res = await fetch(TRENDING_MOVIES_URL);
+  // const data = await res.json();
 
-  return { props: { movies: data.results } };
+  return { props: { movies:dataMocked.results   } };
 };
 
 export default Home;

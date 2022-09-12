@@ -5,8 +5,10 @@ import {
   StyledNavigationItem as NavigationItem,
   StyledNavigationList as NavigationList,
 } from "baseui/header-navigation";
-import { StyledLink as Link } from "baseui/link";
 import { StatefulSelect as Search, TYPE } from "baseui/select";
+import { HeadingMedium } from "baseui/typography";
+import { Block } from "baseui/block";
+
 const options = {
   options: [
     { id: "AliceBlue", color: "#F0F8FF" },
@@ -23,15 +25,36 @@ const options = {
   placeholder: "Search colors",
   maxDropdownHeight: "300px",
 };
-export default function Example() {
+
+export default function NavBar() {
   return (
-    <HeaderNavigation>
+    <Block className="px-8">
+
+    <HeaderNavigation
+      overrides={{
+        Root: {
+          style: {
+            background: "transparent",
+            border: "none",
+            marginBottom: "3em",
+          },
+        },
+      }}
+    >
       <NavigationList $align={ALIGN.left}>
-        <NavigationItem>MOVIENIGHT</NavigationItem>
+        <NavigationItem
+          style={{
+            alignItems: "self-start",
+            justifyContent: "center",
+            paddingLeft: "0",
+          }}
+        >
+          <HeadingMedium>MOVIENIGHT</HeadingMedium>
+        </NavigationItem>
       </NavigationList>
       <NavigationList $align={ALIGN.center} />
       <NavigationList $align={ALIGN.right}>
-        <NavigationItem style={{ width: "200px" }}>
+        <NavigationItem style={{ width: "400px", paddingRight: "10px" }}>
           <Search
             {...options}
             type={TYPE.search}
@@ -43,5 +66,7 @@ export default function Example() {
         </NavigationItem>
       </NavigationList>
     </HeaderNavigation>
+
+    </Block>
   );
 }
