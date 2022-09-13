@@ -22,7 +22,7 @@ const options = {
   ],
   labelKey: "id",
   valueKey: "color",
-  placeholder: "Search colors",
+  placeholder: "Rechercher un film, un réalisateur, un acteur",
   maxDropdownHeight: "300px",
 };
 
@@ -61,6 +61,24 @@ export default function NavBar() {
                 props.option && props.option.id ? props.option.id : null
               }
               onChange={() => {}}
+              overrides={{
+                DropdownContainer: {
+                  style: {
+                    zInder: 1000,
+                  },
+                },
+                Placeholder: {
+                  style: {
+                    color: "white",
+                  },
+                },
+                ControlContainer: {
+                  style: {
+                    borderColor: "rgb(51 51 51 / 55%)",
+                    backgroundColor: "rgb(51 51 51 / 55%)",
+                  },
+                },
+              }}
             />
           </NavigationItem>
         </NavigationList>

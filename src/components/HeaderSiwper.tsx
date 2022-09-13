@@ -34,7 +34,7 @@ const HeaderSwiper = ({
         clickable: true,
       }}
       modules={[Pagination, Navigation, Scrollbar]}
-      style={{ height: "400px", margin: 0 }}
+      style={{ height: "500px", margin: 0 }}
       onSlideChange={(props) => {
         setBackGroundImage(props.realIndex);
       }}
