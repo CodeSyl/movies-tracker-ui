@@ -6,7 +6,7 @@ import { Button, SIZE } from "baseui/button";
 import { useStyletron } from "baseui";
 
 import { IMovieDetail } from "../types";
-import { IMAGE_URL } from "../const";
+import { IMAGE_URL_ORIGINAL } from "../const";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -49,17 +49,17 @@ const HeaderSwiper = ({
             style={{
               borderRadius: "1rem",
               backgroundSize: "cover",
-              backgroundImage: `url(${IMAGE_URL}/${movie?.backdrop_path})`,
+              backgroundImage: `url(${IMAGE_URL_ORIGINAL}/${movie?.backdrop_path})`,
             }}
           >
             <div
-              style={{
+              className={css({
                 width: "30%",
                 height: "20px",
                 position: "absolute",
                 left: "4em",
                 bottom: "7em",
-              }}
+              })}
             >
               <HeadingLarge>{movie.title}</HeadingLarge>
               <div className={spaceHeader}></div>

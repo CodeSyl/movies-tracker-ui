@@ -1,17 +1,17 @@
+import { useEffect, useState } from "react";
 import { GetServerSideProps } from "next";
 import HeaderSwiper from "../components/HeaderSiwper";
 import { BackGroundBlurImage } from "../components/BackGroundBlurImage";
+import PosterSwiper from "../components/PosterSwiper";
 
-import { IMovieDetail } from "../types";
 import {
   API_KEY,
-  BASE_MOVIE,
+  BASE_MOVIE_URL,
   TOP_RATED_MOVIE,
   TRENDING_MOVIES_URL,
 } from "../const";
-import { useEffect, useState } from "react";
-import PosterSwiper from "../components/PosterSwiper";
 import { toHoursAndMinutes } from "../util";
+import { IMovieDetail } from "../types";
 
 const Home = ({
   movies,
@@ -61,7 +61,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const moviesWithRuntime = await Promise.all(
     data.results.map(async (movie: IMovieDetail) => {
       const detailsResponse = await fetch(
-        `${BASE_MOVIE}/${movie.id}?${API_KEY}`
+        `${BASE_MOVIE_URL}/${movie.id}?${API_KEY}`
       );
       const details = await detailsResponse.json();
 

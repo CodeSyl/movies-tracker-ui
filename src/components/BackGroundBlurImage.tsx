@@ -1,9 +1,7 @@
-import { styled, useStyletron } from "baseui";
-import { IMAGE_URL } from "../const";
+import { styled } from "baseui";
+import { IMAGE_URL_ORIGINAL } from "../const";
 
 export const BackGroundBlurImage = ({ image }: { image: string }) => {
-  const [css] = useStyletron();
-
   const BlurBackgroundImage = styled("div", {
     position: "fixed",
     width: "100%",
@@ -11,7 +9,7 @@ export const BackGroundBlurImage = ({ image }: { image: string }) => {
     zIndex: "-100",
     top: 0,
     left: 0,
-    backgroundImage: `url("${IMAGE_URL}/${image}")`,
+    backgroundImage: `url("${IMAGE_URL_ORIGINAL}/${image}")`,
     filter: "blur(25px)",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

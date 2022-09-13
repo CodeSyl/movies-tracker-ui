@@ -12,8 +12,6 @@ import { IMovieDetail } from "../types";
 import { IMAGE_URL_W500 } from "../const";
 
 const ArrowButton = styled(Button, {
-  // position: "absolute",
-  // transform: "translate3d(-100px, 125px, 10px)",
   background: "#00000014",
   borderRadius: "12em",
   padding: "10px",
@@ -39,6 +37,7 @@ function PosterSwiper({
       {movies.length && (
         <>
           <div
+
             style={{
               display:'flex',
               flexDirection:"row",
@@ -48,7 +47,7 @@ function PosterSwiper({
           >
             <ArrowButton
               style={{
-                transform: "translate(-96px, 170px)",
+                transform: "translate(-96px, 195px)",
               }}
               onClick={() => {
                 swiper.slidePrev();
@@ -60,7 +59,7 @@ function PosterSwiper({
                 swiper.slideNext();
               }}
               style={{
-                transform: "translate(96px, 170px)",
+                transform: "translate(96px, 195px)",
               }}
               startEnhancer={() => <ArrowRight size={24} />}
             />
@@ -76,9 +75,8 @@ function PosterSwiper({
               clickable: true,
             }}
             modules={[Keyboard, Navigation, FreeMode]}
-            className="mySwiper"
-            style={{ height: "400px" }}
             onSwiper={(swiper) => setSwiper(swiper)}
+            style={{ height: "400px" }}
           >
             {movies.map((movie, index) => (
               <SwiperSlide key={index}>
